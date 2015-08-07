@@ -14,7 +14,7 @@ $twig = new Twig_Environment($loader, array(
     'cache' => $twig_cache,
 ));
 
-$output = $twig->render('index.html', array(
+$output = $twig->render('index.html', array(fhdhdh
     'a_variable' => 'Hello World',
     'navigation' => array(
         array(
