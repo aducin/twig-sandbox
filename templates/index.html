@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
-        <title>My Webpage</title>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+            <style type="text/css">
+            fieldset{
+                border: 2px ridge purple;
+                background-color:silver;
+                width: 645px; 
+            }
+            #field{
+                margin:50px 0px; 
+            }
+            #title{
+               font-size:18pt;font-style:italic;
+            }
+            #rest{
+                text-align: right;
+            }
+            </style>
     </head>
     <body>
-        <ul id="navigation">
-        {% for item in navigation %}
-            <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-        {% endfor %}
-        </ul>
-
-        <h1>My Webpage</h1>
-        {{ a_variable }}
+<div id='field'><fieldset>
+        <div id="title">{{ result }}</div>
+        <ul> <div id="rest">
+        {% if message %}
+        {% for item in message %}
+     <b><big>{{ item }}</big></b><br>
+      {% endfor %}
+      {% else %}
+      <b><big>{{ error }}</big></b><br>
+      {% endif %}
+      </div></ul>
+     
+        </fieldset>
     </body>
 </html>
